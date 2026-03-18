@@ -16,12 +16,22 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Generate environment.ts
+      - name: Generate environment.development.ts
         run: |
           mkdir -p src/environments
           cat > src/environments/environment.development.ts <<EOF
           export const environment = {
             production: false,
+            supabaseUrl: '${SUPABASE_URL}',
+            supabaseKey: '${SUPABASE_ANON_KEY}',
+          };
+          EOF
+      - name: Generate environment.ts
+        run: |
+          mkdir -p src/environments
+          cat > src/environments/environment.ts <<EOF
+          export const environment = {
+            production: true,
             supabaseUrl: '${SUPABASE_URL}',
             supabaseKey: '${SUPABASE_ANON_KEY}',
           };
