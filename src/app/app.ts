@@ -11,3 +11,5 @@ import { Tasks } from "./tasks/tasks";
 export class App {
   protected readonly title = signal('supabase-tasks-app');
 }
+
+let Abc = '123';
