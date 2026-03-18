@@ -40,8 +40,8 @@ jobs:
           cat > src/environments/environment.development.ts <<EOF
           export const environment = {
             production: false,
-            supabaseUrl: '${SUPABASE_URL}'
-            supabaseKey: '${SUPABASE_ANON_KEY}'
+            supabaseUrl: '${SUPABASE_URL}',
+            supabaseKey: '${SUPABASE_ANON_KEY}',
           };
           EOF
 
