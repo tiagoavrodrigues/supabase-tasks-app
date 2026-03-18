@@ -1,0 +1,30 @@
+<h2>Lista de tarefas</h2>
+
+<div class="task-form">
+  <input
+    type="text"
+    placeholder="Nova tarefa"
+    [(ngModel)]="newTaskTitle"
+  >
+  <button (click)="addTask()">Adicionar</button>
+</div>
+
+<ul class="task-list">
+  @for (task of tasks; track task.id) {
+    <li>
+      <label>
+        <input
+          type="checkbox"
+          [checked]="task.completed"
+          (change)="toggleTask(task)"
+        >
+        {{ task.title }}
+      </label>
+
+      <div class="task-actions">
+        <button (click)="editTask(task)">Editar</button>
+        <button (click)="deleteTask(task.id)">Apagar</button>
+      </div>
+    </li>
+  }
+</ul>

@@ -1,0 +1,47 @@
+h2 {
+  text-align: center;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 8px;
+}
+
+.task-form button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-list button {
+  cursor: pointer;
+}
