@@ -11,5 +11,8 @@ module.exports = defineConfig([
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
     },
+  },
+  {
+    ignores: ['src/app/environments/**']
   }
 ]);
