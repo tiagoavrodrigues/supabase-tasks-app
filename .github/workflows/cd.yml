@@ -26,6 +26,16 @@ jobs:
             supabaseKey: '${SUPABASE_ANON_KEY}',
           };
           EOF
+      - name: Generate environment.ts
+        run: |
+          mkdir -p src/environments
+          cat > src/environments/environment.development.ts <<EOF
+          export const environment = {
+            production: false,
+            supabaseUrl: '${SUPABASE_URL}',
+            supabaseKey: '${SUPABASE_ANON_KEY}',
+          };
+          EOF
 
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
